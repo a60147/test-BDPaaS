@@ -1,0 +1,45 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2017/5/5, 下午 04:16:46
+    Author     : A40385
+*/
+
+.statusSummaryBar_mainFrame{
+    position: relative;
+    float: left;
+}
+
+.statusSummaryBar_statusFrame{
+    position: relative;
+    float: left;
+}
+
+.statusSummaryBar_scrollFrame{
+    position: relative;
+    float: left;
+}
+
+.statusSummaryBar_scrollBackgroundFrame{
+    position: absolute;
+    background-color: #059eda;
+}
+
+.statusSummaryBar_scrollFrontgroundFrame{
+    position: absolute;
+    background-color: #a0a0a0;
+}
+
+.statusSummaryBar_scrollThumb{
+    position: absolute;
+    cursor: pointer;
+}
+
+.statusSummaryBar_timeText{
+    position: absolute;
+    color: #d7d7d7;
+    font-size: 14px;
+}

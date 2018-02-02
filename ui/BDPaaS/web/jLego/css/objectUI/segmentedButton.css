@@ -1,0 +1,23 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2016/5/25, 上午 10:02:14
+    Author     : A40385
+*/
+.segmentedButton_segmentedFrame{
+    position: absolute;
+}
+
+.segmentedButton_segmentedButton{
+    float: left;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+

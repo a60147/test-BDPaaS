@@ -1,0 +1,27 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2017/5/2, 上午 11:06:56
+    Author     : A40385
+*/
+.mainPage_mainFrame{
+    top: 0px;
+    left: 0px;
+    position: absolute;
+}
+
+.mainPage_topBannerFrame{
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    height: 32px;
+    z-index: 2;
+}
+
+.mainPage_contentFrame{
+    position: absolute;
+}
+

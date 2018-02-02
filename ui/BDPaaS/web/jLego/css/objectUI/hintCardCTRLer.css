@@ -1,0 +1,133 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2017/6/26, 下午 02:29:40
+    Author     : A40385
+*/
+.hintCardCTRLer_mainFrame{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    min-height: 32px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    /*
+    background: #6db3f2; 
+    background: -moz-linear-gradient(-45deg,  #6db3f2 0%, #63aaed 50%, #54a3ee 50%, #6eaeef 51%, #41b0d8 100%); 
+    background: -webkit-linear-gradient(-45deg,  #6db3f2 0%,#63aaed 50%,#54a3ee 50%,#6eaeef 51%,#41b0d8 100%);
+    background: linear-gradient(135deg,  #6db3f2 0%,#63aaed 50%,#54a3ee 50%,#6eaeef 51%,#41b0d8 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6db3f2', endColorstr='#41b0d8',GradientType=1 );
+    color: #111;*/
+    background-color: #303f45;
+    color: white;
+
+}
+
+.hintCardCTRLer_titleFrame{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 32px;
+    border-bottom: 1px solid lightgray;
+}
+
+.hintCardCTRLer_titleIcon{
+    position: relative;
+    float: left;
+    height: 28px;
+    width: 28px;
+    margin: 2px;
+}
+
+.hintCardCTRLer_titleText{
+    position: relative;
+    float: left;
+    width: calc(100% - 32px);
+    height: 32px;
+    line-height: 32px;
+    text-indent: 5px;
+}
+
+.hintCardCTRLer_itemFrame{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+}
+
+.hintCardCTRLer_itemIcon{
+    position: relative;
+    float: left;
+    height: 28px;
+    width: 28px;
+    margin: 2px;
+}
+
+.hintCardCTRLer_itemTitle{
+    position: relative;
+    float: left;
+    width: calc(100% - 32px);
+    height: 32px;
+    line-height: 32px;
+    text-indent: 5px;
+}
+
+.hintCardCTRLer_itemText{
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    width: auto;
+    height: 32px;
+    line-height: 32px;
+    text-align: right;
+}
+
+.hintCardCTRLer_itemBadge{
+    position: absolute;
+    top: 6px;
+    right: 5px;
+    width: auto;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.hintCardCTRLer_itemBadge_Warning{
+    position: absolute;
+    top: 6px;
+    right: 5px;
+    width: auto;
+    height: 20px;
+    line-height: 20px;
+    color: white;
+    background-color: #9e1010;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.hintCardCTRLer_bottomLine{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 1px;
+    background-color: lightgray;
+}
+
+.hintCardCTRLer_hintFrame{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    color: #ffc51c;
+    text-align: center;
+    font-style: italic;
+}

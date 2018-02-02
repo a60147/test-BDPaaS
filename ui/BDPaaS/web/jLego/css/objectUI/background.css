@@ -1,0 +1,21 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2014/10/26, 下午 12:04:03
+    Author     : Chris
+*/
+.core_background_frame{
+    width: 100%;
+    height: 100%;
+    background-size:cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    text-align: center;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: -1;
+}

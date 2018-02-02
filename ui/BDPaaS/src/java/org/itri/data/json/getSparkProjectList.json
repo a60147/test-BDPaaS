@@ -1,0 +1,25 @@
+{
+    "errCode": 0,
+    "projectList": [
+        {
+            "id": "app-20170906071346-0004",
+            "name": "Hello Spark-Job-2"
+        },
+        {
+            "id": "app-20170906070626-0003",
+            "name": "Hello Spark"
+        },
+        {
+            "id": "app-20170906070545-0002",
+            "name": "PySparkShell"
+        },
+        {
+            "id": "app-20170906070316-0001",
+            "name": "PySparkShell"
+        },
+        {
+            "id": "app-20170906063202-0000",
+            "name": "PySparkShell"
+        }
+    ]
+}

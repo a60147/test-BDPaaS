@@ -1,0 +1,58 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2016/5/31, 上午 12:24:32
+    Author     : Chris
+*/
+
+.searchBar_search_box{
+    position: absolute;
+    display: block;
+    border: 1px solid darkgrey;
+    width: 260px;
+    height: 20px;
+    border-radius:10px; 
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    background-color: white;
+}
+.searchBar_search_element{
+    display: block;
+    width: 190px;
+    height: 18px;
+    border: 0px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 1px;
+    background-color: white;
+    -moz-box-sizing:  border-box;
+   -webkit-box-sizing: border-box;
+    box-sizing:   border-box;
+    font-size: 16px;
+}
+.searchBar_search_element:focus{
+    display: block;
+    width: 190px;
+    height: 18px;
+    border: 0px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 1px;
+    background-color: white;
+    outline:0;
+    -moz-box-sizing:  border-box;
+   -webkit-box-sizing: border-box;
+    box-sizing:   border-box;
+}
+.searchBar_search_icon{
+    display: block;
+    float: right;
+    width:16px;
+    height: 16px;
+    margin-right: 5px;
+    margin-top: 3px;
+}
+

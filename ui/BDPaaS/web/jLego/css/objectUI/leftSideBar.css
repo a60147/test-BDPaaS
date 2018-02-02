@@ -1,0 +1,115 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2017/5/2, 下午 02:54:16
+    Author     : A40385
+*/
+.leftSideBar_mainFrame{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #d7d7d7;
+}
+.leftSideBar_categoryFrame{
+    width: 100%;
+    float: left;
+}
+.leftSideBar_categoryTitleFrame{
+    width: 100%;
+    height: 32px;
+    float: left;
+    background: #aeaeae;
+    line-height: 32px;
+    text-indent: 5px;
+    font-weight: bold;
+    color: #424242;
+}
+.leftSideBar_categorySearchFrame{
+    width: 100%;
+    height: 32px;
+    float: left;
+}
+.leftSideBar_categoryContentFrame{
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+.leftSideBar_itemFrame{
+    width: 100%;
+    height: 40px;
+    float: left;
+}
+
+.leftSideBar_itemFrameNotSelected{
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.leftSideBar_itemFrameNotSelected:hover{
+    background-color: #d08d8d;
+    cursor: pointer;
+}
+
+.leftSideBar_itemFrameSelected{
+    background-color: #6cc1e1;
+}
+
+.leftSideBar_itemIcon{
+    width: 26px;
+    height: 26px;
+    float: left;
+    margin: 7px 2px 7px 2px;
+}
+
+.leftSideBar_itemName{
+    width: calc(100% - 80px);
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    text-indent: 4px;
+}
+
+.leftSideBar_searchBox{
+    position: relative;
+    display: block;
+    border: 1px solid darkgrey;
+    border-radius:10px; 
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    background-color: white;
+}
+.leftSideBar_searchElement{
+    display: block;
+    border: 0px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 1px;
+    background-color: white;
+    -moz-box-sizing:  border-box;
+   -webkit-box-sizing: border-box;
+    box-sizing:   border-box;
+}
+.leftSideBar_searchElement:focus{
+    display: block;
+    border: 0px;
+    float: left;
+    background-color: white;
+    outline:0;
+    -moz-box-sizing:  border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing:   border-box;
+}
+.leftSideBar_searchIcon{
+    display: block;
+    float: right;
+    width:16px;
+    height: 16px;
+    margin-right: 7px;
+    margin-top: 5px;
+}

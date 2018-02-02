@@ -1,0 +1,98 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2016/12/26, 下午 04:19:44
+    Author     : A40385
+*/
+
+.toastCTRLer_main_frame{
+    position: absolute;
+    right: 0px;
+    width: 300px;
+    height: auto;
+    max-height: 100%;
+    margin-top: 70px;
+    overflow: hidden;
+    z-index: 15000;
+}
+
+.toastCTRLer_card{
+    width: 280px;
+    height: auto;
+    min-height: 85px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 14px lightgray;
+    float: left;
+    margin-top: 5px;
+    overflow: hidden;
+    position: relative;
+    -moz-box-shadow: 0px 4px 8px rgba(20%,20%,20%,0.5);
+    -webkit-box-shadow:0px 4px 8px rgba(20%,20%,20%,0.5);
+    box-shadow:0px 4px 8px rgba(20%,20%,20%,0.5);
+}
+
+.toastCTRLer_card_warning{
+    background-color: rgba(250, 169, 34, 0.95);
+}
+
+.toastCTRLer_card_error{
+    background-color: rgba(203, 95, 85, 0.95);
+}
+
+.toastCTRLer_card_info{
+    background-color: rgba(85, 171, 198, 0.95);
+}
+
+.toastCTRLer_card_success{
+    background-color: rgba(112, 183, 113, 0.95);
+}
+
+.toastCTRLer_card_title{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-indent: 10px;
+    font-size: 20px;
+    color: white;
+    float: left;
+}
+
+.toastCTRLer_card_content_frame{
+    width: 100%;
+    height: auto;
+    float: left;
+    overflow: hidden;
+}
+
+.toastCTRLer_card_icon{
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.toastCTRLer_card_contnet{
+    width: 220px;
+    height: auto;
+    float: left;
+    margin-left: 5px;
+    margin-top: 8px;
+    color: white;
+    font-size: 18px;
+    word-wrap: break-word;
+    overflow:hidden !important;
+    text-overflow: ellipsis;
+}
+
+.toastCTRLer_closeButton{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}

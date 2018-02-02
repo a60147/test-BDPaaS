@@ -1,0 +1,20 @@
+
+---
+Start BDPaaS API server on boot:
+- service file : /lib/systemd/system/bdpaas_api_server.service
+[Unit]
+Description=BDPaaS API Server(v0.1.1)
+
+[Service]
+User=bdpu1
+Type=oneshot
+Environment="BDPAAS_APISERVER_CMD=bas_SimpleWebSrv.py"
+Environment="BDPAAS_APISERVER_LOGFILE=_bas_apiserver.log"
+WorkingDirectory=/home/bdpu1/bdpaas_server
+ExecStart=/bin/bash runsimple.sh start
+RemainAfterExit=true
+ExecStop=/bin/bash runsimple.sh stop
+
+[Install]
+WantedBy=multi-user.target
+

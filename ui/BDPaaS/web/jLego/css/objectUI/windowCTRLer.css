@@ -1,0 +1,50 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2017/5/8, 上午 11:27:51
+    Author     : A40385
+*/
+.windowCTRLer_windowFrame{
+    position: absolute;
+    overflow: hidden;
+    height: auto;
+    -moz-box-shadow: 0px 4px 8px rgba(20%,20%,20%,0.5);
+    -webkit-box-shadow:0px 4px 8px rgba(20%,20%,20%,0.5);
+    box-shadow:0px 4px 8px rgba(20%,20%,20%,0.5);
+}
+
+.windowCTRLer_titleFrame{
+    position: relative;
+    width:100%;
+    height: 30px;
+    background-color: #303f45;
+}
+
+.windowCTRLer_titleLabel{
+    width: auto;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 8px;
+    color: white;
+    position: absolute;
+}
+
+.windowCTRLer_closeButton{
+    width:24px;
+    height: 24px;
+    position: relative;
+    float: right;
+    margin-right: 5px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.windowCTRLer_contentFrame{
+    position: relative;
+    width:100%;
+    background-color: white;
+    overflow: hidden;
+}

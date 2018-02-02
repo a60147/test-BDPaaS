@@ -1,0 +1,249 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2017/8/1, 下午 01:21:57
+    Author     : A40385
+*/
+
+.bigDataPage_contentFrame{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.bigDataPage_content_toolFrame{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 45px;
+    background-color: #666666;
+}
+
+.bigDataPage_content_iFrame{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: calc(100% - 45px);
+    background-color: white;
+}
+
+.bigDataPage_actionButtonFrame{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 30px;
+}
+
+.bigDataPage_platformButtonFrame{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: calc(1005 - 30px);
+}
+
+.bigDataPage_scheduleOutterFrame{
+    display: table;
+    margin: auto;
+    margin-top: 20px;
+}
+.bigDataPage_scheduleFrame{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.bigDataPage_backButton{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 8px;
+    left: 10px;
+    cursor: pointer;
+}
+
+
+.bigDataPage_menuButton{
+    position: relative;
+    float: left;
+    width: 180px;
+    height: 70px;
+    margin-left: 20px;
+    margin-top: 20px;
+    -moz-box-shadow: 0px 4px 8px rgba(20%,20%,20%,0.5);
+    -webkit-box-shadow:0px 4px 8px rgba(20%,20%,20%,0.5);
+    box-shadow:0px 4px 8px rgba(20%,20%,20%,0.5);
+    cursor: pointer;
+    -moz-transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+    transition: all 0.1s;
+}
+
+.bigDataPage_menuButton:hover{
+    position: relative;
+    float: left;
+    width: 180px;
+    height: 70px;
+    margin-left: 20px;
+    margin-top: 20px;
+    -moz-box-shadow: 0px 4px 8px rgba(20%,20%,20%,0.5);
+    -webkit-box-shadow:0px 4px 8px rgba(20%,20%,20%,0.5);
+    box-shadow:0px 4px 8px rgba(20%,20%,20%,0.5);
+    cursor: pointer;
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.bigDataPage_menuButtonIcon{
+    position: relative;
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+.bigDataPage_menuButtonLabel{
+    position: relative;
+    float: left;
+    width: 110px;
+    height: 70px;
+    line-height: 70px;
+    text-indent: 10px;
+    color: white;
+}
+
+.bigDataPage_menuButtonLabel_Half{
+    position: relative;
+    float: left;
+    width: 110px;
+    height: 20px;
+    line-height: 20px;
+    text-indent: 10px;
+    color: white;
+}
+
+.bigDataPage_menuDeleteButtonIcon{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 5px;
+    right: 5px;
+}
+
+.bigDataPage_menuLoadingButtonIcon{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 5px;
+    right: 5px;
+    -webkit-animation: spin 2s infinite linear;
+    -moz-animation: spin 2s infinite linear;
+}
+
+.bigDataPage_toolButton{
+    position: relative;
+    float: right;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 7px;
+    width: auto;
+    color: white;
+    cursor: pointer;
+}
+
+.bigDataPage_toolButton_Click{
+    position: relative;
+    float: right;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 7px;
+    width: auto;
+    color: #059eda;
+}
+
+.bigDataPage_toolGap{
+    position: relative;
+    float: right;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 20px;
+    width: 1px;
+    margin-top: 13px;
+    background-color: white;
+}
+
+.bigDataPage_sparkProjectButtonFrame{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid gray;
+}
+
+.bigDataPage_sparkProjectListFrame{
+    position: relative;
+    float: left;
+    width: 250px;
+    height: calc(100% - 41px);
+    border-right: 1px solid gray;
+}
+
+.bigDataPage_sparkProjectListItemFrame{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+}
+
+.bigDataPage_sparkProjectListItemFrame_Selected{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    background-color: #b3eaff;
+}
+
+.bigDataPage_sparkProjectListItemIcon{
+    position: relative;
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+
+.bigDataPage_sparkProjectListItemText{
+    position: relative;
+    float: left;
+    width: auto;
+    max-width: calc(100% - 80px);
+    height: 40px;
+    line-height: 40px;
+}
+
+.bigDataPage_sparkProjectListItemArrow{
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}

@@ -1,0 +1,33 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: apex-sandbox-deployment-1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: apex-sandbox2
+    spec:
+      containers:
+      - name: apexsandbox2
+        image: apacheapex/sandbox2:v0.1.2 
+        ports:
+        - containerPort: 8088
+        - containerPort: 50070
+        - containerPort: 9090
+        stdin: true
+        tty: true
+
+---
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: apex-sandbox-mem-limit-range
+spec:
+  limits:
+  - default:
+      memory: 5Gi
+    defaultRequest:
+      memory: 2Gi
+    type: Container

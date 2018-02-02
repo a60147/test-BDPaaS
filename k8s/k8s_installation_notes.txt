@@ -1,0 +1,133 @@
+Install k8s cluster (master+slave x 2) on Ubuntu 16.04
+
+date : 09-01-2017
+---
+
+[common]
+$ sudo apt-get update && sudo apt-get install -y apt-transport-https
+	-> may skip
+
+# apt key & repository list
+$ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+$ sudo cat <<EOF > /etc/apt/sources.list.d/kubernetes.list  
+deb http://apt.kubernetes.io/ kubernetes-xenial main  
+EOF
+
+# install docker & kubeadm/kubectl/kubelet
+$ sudo apt-get update
+$ sudo apt-get install -y docker.io
+$ sudo apt-get install -y kubelet kubeadm kubectl kubernetes-cni
+
+
+[master node]
+# init master cluster
+$ sudo kubeadm init
+	-> error
+	...
+	[preflight] Some fatal errors occurred:
+		/var/lib/kubelet is not empty
+	...
+
+	-> probably previous run of "kubeadm init" by non-privilege users leaves something
+		-> lets reset by "sudo kubeadm reset" and run again "sudo kubeadm init"
+
+---
+correct logs of "kubeadm init" :
+
+[kubeadm] WARNING: kubeadm is in beta, please do not use it for production clusters.
+[init] Using Kubernetes version: v1.7.5
+[init] Using Authorization modes: [Node RBAC]
+[preflight] Running pre-flight checks
+[preflight] Starting the kubelet service
+[kubeadm] WARNING: starting in 1.8, tokens expire after 24 hours by default (if you require a non-expiring token use --token-ttl 0)
+[certificates] Generated CA certificate and key.
+[certificates] Generated API server certificate and key.
+[certificates] API Server serving cert is signed for DNS names [k8sm1 kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.121.10]
+[certificates] Generated API server kubelet client certificate and key.
+[certificates] Generated service account token signing key and public key.
+[certificates] Generated front-proxy CA certificate and key.
+[certificates] Generated front-proxy client certificate and key.
+[certificates] Valid certificates and keys now exist in "/etc/kubernetes/pki"
+[kubeconfig] Wrote KubeConfig file to disk: "/etc/kubernetes/kubelet.conf"
+[kubeconfig] Wrote KubeConfig file to disk: "/etc/kubernetes/controller-manager.conf"
+[kubeconfig] Wrote KubeConfig file to disk: "/etc/kubernetes/scheduler.conf"
+[kubeconfig] Wrote KubeConfig file to disk: "/etc/kubernetes/admin.conf"
+[apiclient] Created API client, waiting for the control plane to become ready
+[apiclient] All control plane components are healthy after 77.504926 seconds
+[token] Using token: 5051c5.852cebbbf7031e30
+[apiconfig] Created RBAC rules
+[addons] Applied essential addon: kube-proxy
+[addons] Applied essential addon: kube-dns
+
+Your Kubernetes master has initialized successfully!
+
+To start using your cluster, you need to run (as a regular user):
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  http://kubernetes.io/docs/admin/addons/
+
+You can now join any number of machines by running the following on each node
+as root:
+
+  kubeadm join --token 5051c5.852cebbbf7031e30 192.168.121.10:6443
+---
+
+
+$ kubectl get node
+	-> error
+	The connection to the server localhost:8080 was refused - did you specify the right host or port?
+
+	-> need to run followings after "kubeadm init":
+	mkdir -p $HOME/.kube
+	sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+	sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+# setup kubernetes network 
+$ sudo kubectl apply -f https://git.io/weave-kube
+serviceaccount "weave-net" created
+daemonset "weave-net" created
+
+$ kubectl get nodes
+	-> error "NotReady"
+	NAME      STATUS     AGE       VERSION
+	k8sm1     NotReady   3m        v1.7.4
+
+	-> systemctl status kubelet.service
+	● kubelet.service - kubelet: The Kubernetes Node Agent
+	   Loaded: loaded (/lib/systemd/system/kubelet.service; enabled; vendor preset: enabled)
+	  Drop-In: /etc/systemd/system/kubelet.service.d
+	           └─10-kubeadm.conf
+	   Active: active (running) since Fri 2017-09-01 15:09:07 CST; 6min ago
+	...
+	Unable to update cni config: No networks found in /etc/cni/net.d
+	Sep 01 15:04:47 k8sm1 kubelet[3296]: E0901 15:04:47.742940    3296 kubelet.go:2136] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: 
+	...
+
+	-> https://github.com/kubernetes/kubernetes/issues/43815
+	-> remove KUBELET_NETWORK_ARGS in /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+	[Service]
+	Environment="KUBELET_KUBECONFIG_ARGS=--kubeconfig=/etc/kubernetes/kubelet.conf --require-kubeconfig=true"
+	Environment="KUBELET_SYSTEM_PODS_ARGS=--pod-manifest-path=/etc/kubernetes/manifests --allow-privileged=true"
+	# 09012017
+	# -> try to fix "Container runtime network not ready... in systemctl status kubelet"
+	#Environment="KUBELET_NETWORK_ARGS=--network-plugin=cni --cni-conf-dir=/etc/cni/net.d --cni-bin-dir=/opt/cni/bin"
+	Environment="KUBELET_DNS_ARGS=--cluster-dns=10.96.0.10 --cluster-domain=cluster.local"
+	Environment="KUBELET_AUTHZ_ARGS=--authorization-mode=Webhook --client-ca-file=/etc/kubernetes/pki/ca.crt"
+	Environment="KUBELET_CADVISOR_ARGS=--cadvisor-port=0"
+	ExecStart=
+	ExecStart=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_SYSTEM_PODS_ARGS $KUBELET_NETWORK_ARGS $KUBELET_DNS_ARGS $KUBELET_AUTHZ_ARGS $KUBELET_CADVISOR_ARGS $KUBELET_EXTRA_ARGS
+	-> $ sudo systemctl daemon-reload
+	-> $ sudo systemctl restart kubelet.service
+	-> repeat above steps if slave nodes have same errors
+
+$ kubectl get nodes
+NAME      STATUS    AGE       VERSION
+k8sm1     Ready     1h        v1.7.4
+
+
+

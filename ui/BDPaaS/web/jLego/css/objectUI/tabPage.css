@@ -1,0 +1,74 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2015/6/30, ?U?? 02:43:40
+    Author     : 531206
+*/
+.tabPage_MainFrame{
+    width: 100%;
+    height: 100%;
+}
+.tabPage_TabFrame{
+    position: relative;
+    float: left;
+    height: 40px;
+}
+.tabPage_PageFrame{
+    position: relative;
+    float: left;
+}
+.tabPage_PageFrame_NoBorder{
+    position: relative;
+    float: left;
+}
+.tabPage_PageFrame_FirstTabClick{
+    position: relative;
+    float: left;
+}
+.tabPage_Tab_Off{
+    height: 20px;
+    position: relative;
+    float: left;
+    bottom: -1px;
+    margin-top: 12px;
+    display: inline-block;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+    color: #428bca;
+}
+.tabPage_Tab_Off:hover{
+    height: 20px;
+    position: relative;
+    float: left;
+    bottom: -1px;
+    margin-top: 12px;
+    display: inline-block;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+    color: #23aae8;
+}
+.tabPage_Tab_On{
+    height: 20px;
+    position: relative;
+    float: left;
+    bottom: -1px;
+    margin-top: 12px;
+    display: inline-block;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.tabPage_Page{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}

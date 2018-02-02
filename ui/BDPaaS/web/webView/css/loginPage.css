@@ -1,0 +1,93 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2016/8/1, 上午 11:33:35
+    Author     : A40385
+*/
+
+.loginPage_MainFrame{
+    top: 0px;
+    left: 0px;
+    position: absolute;
+}
+
+.loginPage_loginFrame{
+    top: 200px;
+    left: 0px;
+    position: relative;
+    width: 400px;
+    height: 180px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding-top: 10px;
+}
+.loginPage_titleFrame{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    text-align: center;
+    font-size: 30px;
+    color: #002d4c;
+}
+.loginPage_inputFrame{
+    float: left;
+    width: 340px;
+    height: 45px;
+    padding-left: 30px;
+}
+
+.loginPage_inputTitle{
+    float: left;
+    width: 90px;
+    height: 45px;
+    line-height: 45px;
+    color: #002d4c;
+}
+
+.loginPage_inputBox{
+    float: left;
+    width: 235px;
+    margin-left: 10px;
+    height: 30px;
+    margin-top: 7px;
+    color: #464b61;
+    border-radius: 5px;
+    border: 1px solid gray;
+    text-indent: 5px;
+}
+
+.loginPage_loginButton{
+    float: left;
+    width: 338px;
+    height: 30px;
+    margin-top: 7px;
+    border-radius: 5px;
+    background: #f2f6f8; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f2f6f8 0%, #d8e1e7 50%, #b5c6d0 51%, #e0eff9 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=0 ); /* IE6-9 */
+    border: 1px solid gray;
+    cursor: pointer;
+    color: #002d4c;
+}
+
+.loginPage_loginButton:hover{
+    float: left;
+    width: 338px;
+    height: 30px;
+    margin-top: 7px;
+    border-radius: 5px;
+    background: #fceabb; /* Old browsers */
+    background: -moz-linear-gradient(top,  #fceabb 0%, #fccd4d 50%, #f8b500 51%, #fbdf93 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#fbdf93',GradientType=0 ); /* IE6-9 */
+    border: 1px solid gray;
+    cursor: pointer;
+    color: #002d4c;
+}

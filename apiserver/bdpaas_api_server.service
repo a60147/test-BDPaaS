@@ -1,0 +1,17 @@
+[Unit]
+Description=BDPaaS API Server (v0.1.1)
+
+[Service]
+User=k1
+Type=oneshot
+Environment="BDPAAS_APISERVER_CMD=/home/k1/iii/test/bdpaas_server/simpleweb/server/bas_SimpleWebSrv.py"
+Environment="BDPAAS_APISERVER_LOGFILE=/home/k1/iii/test/bdpaas_server/simpleweb/server/_bas_apiserver.log"
+WorkingDirectory=/home/k1/iii/test/bdpaas_server/simpleweb/server
+ExecStart=/bin/bash runsimple.sh start
+RemainAfterExit=true
+ExecStop=/bin/bash runsimple.sh stop
+#StandardOutput=journal
+#Restart=always
+
+[Install]
+#WantedBy=multi-user.target

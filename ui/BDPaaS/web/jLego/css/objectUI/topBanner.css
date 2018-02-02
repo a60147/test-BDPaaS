@@ -1,0 +1,63 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2017/5/2, 上午 10:18:53
+    Author     : A40385
+*/
+.topBanner_mainFrame{
+    width: 100%;
+    height: 32px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.topBanner_background{
+    width: 100%;
+    height: 32px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #059eda;
+}
+.topBanner_frontground{
+    width: 100%;
+    height: 28px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #303f45;
+}
+
+.topBanner_itemContainer{
+    width: calc(100% - 250px);
+    position: absolute;
+    top: 0px;
+    left: 10px;
+}
+
+.topBanner_itemFrame{
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.topBanner_itemFrameSelected{
+    background-color: #059eda;
+    cursor: default;
+}
+
+.topBanner_itemIcon{
+    float: left;
+    margin: 4px;
+}
+
+.topBanner_itemName{
+    float: left;
+    margin-left: 4px;
+    margin-right: 10px;
+    color: white;
+}

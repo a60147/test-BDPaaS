@@ -1,0 +1,6 @@
+---
+DataTorrent RTS:
+- need to build container apacheapex/sandbox2:v0.1.2 via "docker-pool/apex/build.sh" and transfer to all worker nodes
+- notes:
+	- add executable mode to datatorrent-rts.bin, otherwise datatorrent-rts.bin service will not run up and 9090 port will not work
+	- modify worker_nodes in build.sh to reflect actual worker nodes
