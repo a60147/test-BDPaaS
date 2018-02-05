@@ -54,13 +54,10 @@ Following installation guide is based on glassfish and netbeans.
 
 ## Used addons
 - JQuery
-- highcharts (License required)
+- dateTimePicker
 - perfectScrollbar
 - moment
-- visJS
-- jQWidgets (License required)
-- GSAP (License required)
-- Icons8 (License required)
+- Icons8 
 
 ## Acknowledgments
 
