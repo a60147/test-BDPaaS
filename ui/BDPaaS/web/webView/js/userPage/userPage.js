@@ -739,7 +739,6 @@ userPage.prototype.drawEditUserForm=function(userID, currentUserName, currentPas
                     jLego.toastCTRLer.addError({title: "Error", content: "Failed!"});
                 }
             }
-            console.info(inputForm)
             webView.connection.editUser(inputForm, completeCallback);
             
         }
@@ -747,7 +746,6 @@ userPage.prototype.drawEditUserForm=function(userID, currentUserName, currentPas
 }
 
 userPage.prototype.drawManualEditPlatformForm=function(userID, currentPlatforms){
-    console.info(currentPlatforms)
     this.popupPanelCTRLer = new jLego.objectUI.popoutPanel();
     var optionListCTRLer = new jLego.objectUI.optionListCTRLer();
     this.popupPanelCTRLer.add(document.body, {hasFootFrame: true, title: "Manual Edit Platform"});
@@ -1071,7 +1069,7 @@ userPage.prototype.drawManualEditPlatformForm=function(userID, currentPlatforms)
             apexProjectList[apexProjectList.length] = newProject;
         }
         for(var i=0; i<hadoopItemList.length; i++){
-            var currentProjectItem = hadoopLabelList[i];
+            var currentProjectItem = apexLabelList[i];
             var projectName = optionListCTRLer.getValue(currentProjectItem);
             var currentItem = hadoopItemList[i];
             var url = optionListCTRLer.getValue(currentItem);
@@ -1085,7 +1083,7 @@ userPage.prototype.drawManualEditPlatformForm=function(userID, currentPlatforms)
             apexProjectList[apexProjectList.length] = newProject;
         }
         for(var i=0; i<yarnItemList.length; i++){
-            var currentProjectItem = yarnLabelList[i];
+            var currentProjectItem = apexLabelList[i];
             var projectName = optionListCTRLer.getValue(currentProjectItem);
             var currentItem = yarnItemList[i];
             var url = optionListCTRLer.getValue(currentItem);
@@ -1114,7 +1112,7 @@ userPage.prototype.drawManualEditPlatformForm=function(userID, currentPlatforms)
             sparkProjectList[sparkProjectList.length] = newProject;
         }
         for(var i=0; i<zeppelinItemList.length; i++){
-            var currentProjectItem = zeppelinLabelList[i];
+            var currentProjectItem = sparkLabelList[i];
             var projectName = optionListCTRLer.getValue(currentProjectItem);
             var currentItem = zeppelinItemList[i];
             var url = optionListCTRLer.getValue(currentItem);

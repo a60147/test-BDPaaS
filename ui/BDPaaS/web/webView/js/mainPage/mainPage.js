@@ -83,11 +83,15 @@ mainPage.prototype.add=function(target, option){
 mainPage.prototype.drawTopBannerItems=function(Jdata){
     this.topBannerCTRLer = jLego.topBanner;
     var hasDashboardFlag = false;
-    if(Jdata.k8sDashboard!=null && webView.variables.authority == 0){
-        this.dashboardItem = this.addDashboardItem(Jdata.k8sDashboard);
-        hasDashboardFlag = true;
+    var hasSparkConsoleFlag = false;
+    if(webView.variables.authority == 0){
+        if(Jdata.k8sDashboard!=null){
+            this.dashboardItem = this.addDashboardItem(Jdata.k8sDashboard);
+            hasDashboardFlag = true;
+        }
         this.sparkConsoleItem = this.addSparkConsoleItem();
         this.apexConsoleItem = this.addApexConsoleItem();
+        hasSparkConsoleFlag = true;
     }
     this.bigDataItem = this.addBigDataItem(Jdata.platform);
     this.addLogoutButton();

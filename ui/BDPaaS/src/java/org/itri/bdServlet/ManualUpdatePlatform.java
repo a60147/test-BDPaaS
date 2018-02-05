@@ -55,6 +55,7 @@ import org.itri.data.entity.Status;
 import org.itri.data.entity.User;
 import org.itri.dataAccess.PlatformDBManager;
 import org.itri.dataAccess.UserDBManager;
+import org.itri.utils.DebugLog;
 
 
 /**
@@ -77,7 +78,7 @@ public class ManualUpdatePlatform extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         ServletOutputStream out = response.getOutputStream();
         JSONObject jsonResult = new JSONObject(); 
-        System.out.println(inputJSON.toString());
+        DebugLog.info(inputJSON.toString());
         try {
             PlatformDBManager platformDBManager = new PlatformDBManager();
             String userID = inputJSON.getString(Key.USER_ID);
@@ -85,22 +86,31 @@ public class ManualUpdatePlatform extends HttpServlet {
             HashMap<String, Platform> platformMap = new HashMap<String, Platform>();
             for(Platform platform : platformListOfCurrentUser){
                 String key = platform.getType() + "-" + platform.getProjectName();
-                System.out.println("prepare key: " + key);
+                DebugLog.info("prepare key: " + key);
                 platformMap.put(key, platform);
             }
             if(inputJSON.has(Key.DASHBOARD_URL)){
                 String key = Key.K8S_DASHBOARD + "-bdpaas-" + userID;
                 String projectName = "bdpaas-" + userID;
                 String inputURL = inputJSON.getString(Key.DASHBOARD_URL);
-                if(platformMap.get(key) == null) platformDBManager.addPlatform(userID, projectName, Key.K8S_DASHBOARD, inputURL);
-                else platformDBManager.editPlatform(userID, projectName, Key.K8S_DASHBOARD, inputURL);
+                if(inputURL != null){
+                    if(!inputURL.matches("")){
+                        if(platformMap.get(key) == null) platformDBManager.addPlatform(userID, projectName, Key.K8S_DASHBOARD, inputURL);
+                        else platformDBManager.editPlatform(userID, projectName, Key.K8S_DASHBOARD, inputURL);
+                    }
+                }
+                
             }
             if(inputJSON.has(Key.GRAFANA_URL)){
                 String key = Key.GRAFANA + "-bdpaas-" + userID;
                 String projectName = "bdpaas-" + userID;
                 String inputURL = inputJSON.getString(Key.DASHBOARD_URL);
-                if(platformMap.get(key) == null) platformDBManager.addPlatform(userID, projectName, Key.GRAFANA, inputURL);
-                else platformDBManager.editPlatform(userID, projectName, Key.GRAFANA, inputURL);
+                if(inputURL != null){
+                    if(!inputURL.matches("")){
+                        if(platformMap.get(key) == null) platformDBManager.addPlatform(userID, projectName, Key.GRAFANA, inputURL);
+                        else platformDBManager.editPlatform(userID, projectName, Key.GRAFANA, inputURL);
+                    }
+                }
             }
             if(inputJSON.has(Key.APEX_PROJECT_LIST)){
                 JSONArray apexProjectList = new JSONArray(inputJSON.getString(Key.APEX_PROJECT_LIST));
@@ -113,9 +123,13 @@ public class ManualUpdatePlatform extends HttpServlet {
                         projectName = "bdpaas-" + userID + "-" + currentItem.getString(Key.PROJECT_NAME);
                     String key = currentItem.getString(Key.TYPE) + "-" + projectName;
                     String inputURL = currentItem.getString(Key.URL);
-                    System.out.println("key: " + key);
-                    if(platformMap.get(key) == null) platformDBManager.addPlatform(userID, projectName, currentItem.getString(Key.TYPE), inputURL);
-                    else platformDBManager.editPlatform(userID, projectName, currentItem.getString(Key.TYPE), inputURL);
+                    DebugLog.info("key: " + key);
+                    if(inputURL != null){
+                        if(!inputURL.matches("")){
+                            if(platformMap.get(key) == null) platformDBManager.addPlatform(userID, projectName, currentItem.getString(Key.TYPE), inputURL);
+                            else platformDBManager.editPlatform(userID, projectName, currentItem.getString(Key.TYPE), inputURL);
+                        }
+                    }
                 }
             }
             if(inputJSON.has(Key.SPARK_PROJECT_LIST)){
@@ -129,9 +143,13 @@ public class ManualUpdatePlatform extends HttpServlet {
                         projectName = "bdpaas-" + userID + "-" + currentItem.getString(Key.PROJECT_NAME);
                     String key = currentItem.getString(Key.TYPE) + "-" + projectName;
                     String inputURL = currentItem.getString(Key.URL);
-                    System.out.println("key: " + key);
-                    if(platformMap.get(key) == null) platformDBManager.addPlatform(userID, projectName, currentItem.getString(Key.TYPE), inputURL);
-                    else platformDBManager.editPlatform(userID, projectName, currentItem.getString(Key.TYPE), inputURL);
+                    DebugLog.info("key: " + key);
+                    if(inputURL != null){
+                        if(!inputURL.matches("")){
+                            if(platformMap.get(key) == null) platformDBManager.addPlatform(userID, projectName, currentItem.getString(Key.TYPE), inputURL);
+                            else platformDBManager.editPlatform(userID, projectName, currentItem.getString(Key.TYPE), inputURL);
+                        }
+                    }
                 }
             }
             jsonResult.put(Key.ERROR_CODE, Status.SUCCESS);

@@ -25,6 +25,7 @@ import org.itri.data.entity.Database;
 import org.itri.data.entity.Table;
 import org.itri.data.entity.User;
 import org.itri.data.entity.Utils;
+import org.itri.utils.DebugLog;
 
 
 /**
@@ -86,11 +87,11 @@ public class UserDBManager {
         User result = null;
         try{
             myStatement = myConnect.prepareStatement("SELECT * FROM " + Table.USER + " WHERE " + Column.USER_ID + "=?");  
-            System.out.println("SELECT * FROM " + Table.USER + " WHERE " + Column.USER_ID + "=" + userID);
+            DebugLog.info("SELECT * FROM " + Table.USER + " WHERE " + Column.USER_ID + "=" + userID);
             myStatement.setString(1, userID);
             myResultSet = myStatement.executeQuery();
             if (myResultSet.next()) {
-                System.out.println("exist...");
+                DebugLog.info("exist...");
                 result = new User(myResultSet.getString(Column.USER_ID),
                                     myResultSet.getString(Column.USER_NAME),
                                     myResultSet.getString(Column.PASSWORD),

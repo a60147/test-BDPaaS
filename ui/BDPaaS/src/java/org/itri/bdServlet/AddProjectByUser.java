@@ -56,6 +56,7 @@ import org.itri.data.entity.User;
 import org.itri.dataAccess.ContainerManager;
 import org.itri.dataAccess.PlatformDBManager;
 import org.itri.dataAccess.UserDBManager;
+import org.itri.utils.DebugLog;
 
 
 /**
@@ -79,7 +80,7 @@ public class AddProjectByUser extends HttpServlet {
         String userID = (String)request.getSession().getAttribute("userID");
         ServletOutputStream out = response.getOutputStream();
         JSONObject jsonResult = new JSONObject(); 
-        System.out.println(inputJSON.toString());
+        DebugLog.info(inputJSON.toString());
         try {
             if(userID == null){
                 jsonResult.put(Key.ERROR_CODE, Status.NOT_LOGIN);

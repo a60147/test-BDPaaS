@@ -25,6 +25,7 @@ import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 import org.itri.data.Key;
 import org.itri.data.ServletConfig;
+import org.itri.data.Utils;
 import org.itri.data.entity.Platform;
 import org.itri.data.entity.Status;
 import org.itri.data.entity.User;
@@ -71,7 +72,10 @@ public class GetAllApexConsoles extends HttpServlet {
                     platformJSON.put(Key.URL, currentPlatform.getURL());
                     platformJSON.put(Key.PROJECT_NAME, currentPlatform.getProjectName());
                     platformJSON.put(Key.USER, currentPlatform.getUserID());
-                    jsonResult.put(Key.HADOOP, currentPlatform.getURL()); 
+                    //jsonResult.put(Key.HADOOP, currentPlatform.getURL()); 
+                    String tempURL = Utils.getConvertedIP(request, currentPlatform.getURL());
+                    platformJSON.put(Key.URL, tempURL);
+                    platformJSON.put(Key.HADOOP, tempURL);
                     platformJSONList.put(platformJSON);
                 } 
                 
@@ -82,7 +86,10 @@ public class GetAllApexConsoles extends HttpServlet {
                     platformJSON.put(Key.URL, currentPlatform.getURL());
                     platformJSON.put(Key.PROJECT_NAME, currentPlatform.getProjectName());
                     platformJSON.put(Key.USER, currentPlatform.getUserID());
-                    jsonResult.put(Key.YARN, currentPlatform.getURL()); 
+                    //jsonResult.put(Key.YARN, currentPlatform.getURL()); 
+                    String tempURL = Utils.getConvertedIP(request, currentPlatform.getURL());
+                    platformJSON.put(Key.URL, tempURL);
+                    platformJSON.put(Key.YARN, tempURL);
                     platformJSONList.put(platformJSON);
                 } 
                 

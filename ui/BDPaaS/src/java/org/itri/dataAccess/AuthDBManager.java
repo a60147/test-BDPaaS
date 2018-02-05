@@ -19,6 +19,7 @@ import org.itri.data.entity.Column;
 import org.itri.data.entity.Database;
 import org.itri.data.entity.Login;
 import org.itri.data.entity.Table;
+import org.itri.utils.DebugLog;
 
 
 /**
@@ -59,9 +60,9 @@ public class AuthDBManager {
             myResultSet = myStatement.executeQuery();
 
             if (myResultSet.next()) {
-                System.out.println("has found");
+                DebugLog.info("has found");
                 if(password.equals(myResultSet.getString(Column.PASSWORD))){
-                    System.out.println("Login success");
+                    DebugLog.info("Login success");
                     result = new Login(true, 
                                        account, 
                                        password, 
@@ -70,7 +71,7 @@ public class AuthDBManager {
                                        myResultSet.getInt(Column.AUTHORITY));
                 }
                 else{
-                    System.out.println("Login failed");
+                    DebugLog.info("Login failed");
                     result = new Login(false);
                 }
             }

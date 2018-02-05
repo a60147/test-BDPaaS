@@ -126,7 +126,6 @@ connection.prototype.getAllUsers=function(onReceiveCallback){
 }
 
 connection.prototype.addUser=function(userFormData, onReceiveCallback){
-    console.info(userFormData)
     $.ajax({
         type     : "POST",
         cache    : false,
@@ -143,7 +142,6 @@ connection.prototype.addUser=function(userFormData, onReceiveCallback){
 }
 
 connection.prototype.editUser=function(userFormData, onReceiveCallback){
-    console.info(userFormData)
     $.ajax({
         type     : "POST",
         cache    : false,
@@ -245,7 +243,6 @@ connection.prototype.getAllApexConsoles=function(onReceiveCallback){
 }
 
 connection.prototype.manualEditPlatform=function(inputFormData, onReceiveCallback){
-    console.info(inputFormData)
     $.ajax({
         type     : "POST",
         cache    : false,

@@ -54,6 +54,7 @@ import org.itri.data.entity.Status;
 import org.itri.data.entity.User;
 import org.itri.dataAccess.PlatformDBManager;
 import org.itri.dataAccess.UserDBManager;
+import org.itri.utils.DebugLog;
 
 
 /**
@@ -76,7 +77,7 @@ public class UpdatePlatform extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         ServletOutputStream out = response.getOutputStream();
         JSONObject jsonResult = new JSONObject(); 
-        System.out.println(inputJSON.toString());
+        DebugLog.info(inputJSON.toString());
         try {
             String userID = inputJSON.getString(Key.USER);
             JSONObject projectObject = inputJSON.getJSONObject(Key.PROJECT);
@@ -97,7 +98,7 @@ public class UpdatePlatform extends HttpServlet {
                 }
             }
             PlatformDBManager platformDBManager = new PlatformDBManager();
-            System.out.println("command: " +command);
+            DebugLog.info("command: " +command);
             if(returnResult==null){
                 
             }

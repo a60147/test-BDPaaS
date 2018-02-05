@@ -65,6 +65,7 @@ import org.itri.data.entity.Status;
 import org.itri.data.entity.User;
 import org.itri.dataAccess.PlatformDBManager;
 import org.itri.dataAccess.UserDBManager;
+import org.itri.utils.DebugLog;
 
 
 /**
@@ -87,7 +88,7 @@ public class SimulateCreatePlatform extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         ServletOutputStream out = response.getOutputStream();
         JSONObject jsonResult = new JSONObject(); 
-        System.out.println(inputJSON.toString());
+        DebugLog.info(inputJSON.toString());
         try {
             JSONObject userJSON = inputJSON.getJSONObject("user");
             String userID = userJSON.getString("name");
@@ -233,9 +234,7 @@ public class SimulateCreatePlatform extends HttpServlet {
 
         try {
             String inputString = jsonBuffer.toString();
-            System.out.println("@@@@@@@@@@-------");
-            System.out.println(inputString);
-            System.out.println("@@@@@@@@@@-------@@@@@@@@@@@@@");
+            DebugLog.info(inputString);
           JSONObject jsonObject =  new JSONObject(inputString);
           processRequest(request, response, jsonObject);
         } catch (JSONException e) {

@@ -27,6 +27,7 @@ import org.itri.data.entity.Platform;
 import org.itri.data.entity.Table;
 import org.itri.data.entity.User;
 import org.itri.data.entity.Utils;
+import org.itri.utils.DebugLog;
 
 
 /**
@@ -155,7 +156,7 @@ public class PlatformDBManager {
         ArrayList<Platform> result = new ArrayList<Platform>();
         try{
             myStatement = myConnect.prepareStatement("SELECT * FROM " + Table.PLATFORM + " WHERE " + Column.USER_ID + "=?");  
-            System.out.println("SELECT * FROM " + Table.PLATFORM + " WHERE " + Column.USER_ID + "=" + userID);
+            DebugLog.info("SELECT * FROM " + Table.PLATFORM + " WHERE " + Column.USER_ID + "=" + userID);
             myStatement.setString(1, userID);
             myResultSet = myStatement.executeQuery();
             while (myResultSet.next()) {
@@ -179,7 +180,7 @@ public class PlatformDBManager {
         ArrayList<Platform> result = new ArrayList<Platform>();
         try{
             myStatement = myConnect.prepareStatement("SELECT * FROM " + Table.TEMP_PLATFORM + " WHERE " + Column.USER_ID + "=?");  
-            System.out.println("SELECT * FROM " + Table.PLATFORM + " WHERE " + Column.USER_ID + "=" + userID);
+            DebugLog.info("SELECT * FROM " + Table.PLATFORM + " WHERE " + Column.USER_ID + "=" + userID);
             myStatement.setString(1, userID);
             myResultSet = myStatement.executeQuery();
             while (myResultSet.next()) {
@@ -252,7 +253,7 @@ public class PlatformDBManager {
         ResultSet myResultSet = null;
         boolean result = false;
         try{
-            System.out.println("addTempPlatform");
+            DebugLog.info("addTempPlatform");
             myStatement = myConnect.prepareStatement(" INSERT INTO " + Table.TEMP_PLATFORM + " (" + Column.ID + "," + Column.USER_ID + "," + Column.PLATFORM_TYPE + ","
                     + Column.PLATFORM_URL + "," + Column.PROJECT_NAME + ") VALUES (NULL,?,?,?, ?)", Statement.RETURN_GENERATED_KEYS);            
             int updateRow = 0; 
@@ -328,7 +329,7 @@ public class PlatformDBManager {
         boolean result = false;
         try{
             myStatement = myConnect.prepareStatement(" DELETE FROM " + Table.PLATFORM + " WHERE " + Column.USER_ID + "=? AND " + Column.PROJECT_NAME + "=? AND " + Column.PLATFORM_TYPE + "=?");
-            System.out.println(" DELETE FROM " + Table.PLATFORM + " WHERE " + Column.USER_ID + "= " + userID + " AND " + Column.PROJECT_NAME + "=" + projectName + " AND " + Column.PLATFORM_TYPE + "=" + type);
+            DebugLog.info(" DELETE FROM " + Table.PLATFORM + " WHERE " + Column.USER_ID + "= " + userID + " AND " + Column.PROJECT_NAME + "=" + projectName + " AND " + Column.PLATFORM_TYPE + "=" + type);
             myStatement.setString(1, userID);
             myStatement.setString(2, projectName);
             myStatement.setString(3, type);
@@ -351,9 +352,9 @@ public class PlatformDBManager {
         ResultSet myResultSet = null;
         boolean result = false;
         try{
-            System.out.println("deleteTempPlatform");
+            DebugLog.info("deleteTempPlatform");
             myStatement = myConnect.prepareStatement(" DELETE FROM " + Table.TEMP_PLATFORM + " WHERE " + Column.USER_ID + "=? AND " + Column.PROJECT_NAME + "=? AND " + Column.PLATFORM_TYPE + "=?");
-            System.out.println(" DELETE FROM " + Table.PLATFORM + " WHERE " + Column.USER_ID + "= " + userID + " AND " + Column.PROJECT_NAME + "=" + projectName + " AND " + Column.PLATFORM_TYPE + "=" + type);
+            DebugLog.info(" DELETE FROM " + Table.PLATFORM + " WHERE " + Column.USER_ID + "= " + userID + " AND " + Column.PROJECT_NAME + "=" + projectName + " AND " + Column.PLATFORM_TYPE + "=" + type);
             myStatement.setString(1, userID);
             myStatement.setString(2, projectName);
             myStatement.setString(3, type);

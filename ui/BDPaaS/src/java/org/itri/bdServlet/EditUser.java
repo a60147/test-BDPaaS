@@ -53,6 +53,7 @@ import org.itri.data.entity.User;
 import org.itri.dataAccess.ContainerManager;
 import org.itri.dataAccess.PlatformDBManager;
 import org.itri.dataAccess.UserDBManager;
+import org.itri.utils.DebugLog;
 
 
 /**
@@ -156,7 +157,7 @@ public class EditUser extends HttpServlet {
                             projectObject.put(Key.COMMAND, commandArrayObject);
                             createdProjectObject.put(Key.PROJECT, projectObject);
                             //call api to create a new platform
-                            System.out.println("create apex: " + createdProjectObject.toString());
+                            DebugLog.info("create apex: " + createdProjectObject.toString());
                             platformDBManager.addTempPlatform(userID, proejctName, Key.APEX, "");
                             containerManager.createPlatform(createPlatformURL, createdProjectObject);
                         }
@@ -188,7 +189,7 @@ public class EditUser extends HttpServlet {
                         String operation = currentProject.getString(Key.OPERATION);
                         if(operation.matches(Key.ADD)){
                             String proejctName = "bdpaas-" + targetUserID + "-" + currentProject.getString(Key.PROJECT_NAME);
-                            System.out.println("spark: " + proejctName);
+                            DebugLog.info("spark: " + proejctName);
                             if(projectNameList.get(proejctName)==null){
                                 proejctName = proejctName + "-1";
                                 projectNameList.put(proejctName, 1);
@@ -214,7 +215,7 @@ public class EditUser extends HttpServlet {
                             projectObject.put(Key.COMMAND, commandArrayObject);
                             createdProjectObject.put(Key.PROJECT, projectObject);
                             //call api to create a new platform
-                            System.out.println("create spark: " + createdProjectObject.toString());
+                            DebugLog.info("create spark: " + createdProjectObject.toString());
                             platformDBManager.addTempPlatform(userID, proejctName, Key.SPARK, "");
                             containerManager.createPlatform(createPlatformURL, createdProjectObject);
                         }

@@ -245,7 +245,6 @@ bigDataPage.prototype.drawSparkTool=function(target, projectData){
 }
 
 bigDataPage.prototype.drawDeleteProjectNotification=function(projectData){
-    console.info(projectData)
     this.popupPanelCTRLer = new jLego.objectUI.popoutPanel();
     this.popupPanelCTRLer.add(document.body, {hasFootFrame: true, 
                                                title: "Delete Project",
@@ -616,7 +615,6 @@ bigDataPage.prototype.editDialogCreate=function(dialog, fields, editAppointment)
                        </div>");
     
     
-    console.info("#dialog" + idKey)
     $("#dialog" + idKey).children().last().before($(imageSelection));
     var imageList = ["Windows 10", "Ubuntu 14.0", "RedHat 6"];
     $("#imageSelectionInput" + idKey).jqxDropDownList({ source: imageList, selectedIndex: 1, width: '370', height: '20'});

@@ -11,18 +11,23 @@
     </session-config>
     <context-param>
         <param-name>dataTorrentURL</param-name>
-        <param-value>http://140.96.27.14:30077</param-value>
+        <param-value>http://localhost</param-value>
     </context-param>
     <context-param>
         <param-name>sparkConsoleURL</param-name>
-        <param-value>http://140.96.27.14:30077</param-value>
+        <param-value>http://localhost</param-value>
     </context-param>
     <context-param>
         <param-name>sparkZeppelinURL</param-name>
-        <param-value>http://140.96.27.14:31136</param-value>
+        <param-value>http://localhost</param-value>
     </context-param>
     <context-param>
         <param-name>createPlatformURL</param-name>
         <param-value>http://localhost:8080/BDPaaS/simulateCreatePlatform</param-value>
     </context-param>
+    <context-param>
+        <param-name>bdpaasIP</param-name>
+        <param-value></param-value>
+    </context-param>
+    
 </web-app>

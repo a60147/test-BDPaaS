@@ -25,6 +25,7 @@ import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 import org.itri.data.Key;
 import org.itri.data.ServletConfig;
+import org.itri.data.Utils;
 import org.itri.data.entity.Platform;
 import org.itri.data.entity.Status;
 import org.itri.data.entity.User;
@@ -67,14 +68,18 @@ public class GetMyPlatforms extends HttpServlet {
                     if(currentPlatform.getType().matches(Key.K8S_DASHBOARD)){
                         if(authority == ServletConfig.AUTHORITY_ADMIN){
                             platformJSON.put(Key.TYPE, currentPlatform.getType());
-                            platformJSON.put(Key.URL, currentPlatform.getURL());
+                            //platformJSON.put(Key.URL, currentPlatform.getURL());
+                            String tempURL = Utils.getConvertedIP(request, currentPlatform.getURL());
+                            platformJSON.put(Key.URL, tempURL);
                             platformJSON.put(Key.PROJECT_NAME, currentPlatform.getProjectName());
                             jsonResult.put(Key.K8S_DASHBOARD, currentPlatform.getURL());
                         }
                     }
                     else{
                         platformJSON.put(Key.TYPE, currentPlatform.getType());
-                        platformJSON.put(Key.URL, currentPlatform.getURL());
+                        String tempURL = Utils.getConvertedIP(request, currentPlatform.getURL());
+                        platformJSON.put(Key.URL, tempURL);
+                        //platformJSON.put(Key.URL, currentPlatform.getURL());
                         platformJSON.put(Key.PROJECT_NAME, currentPlatform.getProjectName());
                     }
                     platformJSON.put(Key.IS_CREATING, false);
@@ -93,14 +98,18 @@ public class GetMyPlatforms extends HttpServlet {
                     if(currentPlatform.getType().matches(Key.K8S_DASHBOARD)){
                         if(authority == ServletConfig.AUTHORITY_ADMIN){
                             platformJSON.put(Key.TYPE, currentPlatform.getType());
-                            platformJSON.put(Key.URL, currentPlatform.getURL());
+                            String tempURL = Utils.getConvertedIP(request, currentPlatform.getURL());
+                            platformJSON.put(Key.URL, tempURL);
+                            //platformJSON.put(Key.URL, currentPlatform.getURL());
                             platformJSON.put(Key.PROJECT_NAME, currentPlatform.getProjectName());
                             jsonResult.put(Key.K8S_DASHBOARD, currentPlatform.getURL());
                         }
                     }
                     else{
                         platformJSON.put(Key.TYPE, currentPlatform.getType());
-                        platformJSON.put(Key.URL, currentPlatform.getURL());
+                        String tempURL = Utils.getConvertedIP(request, currentPlatform.getURL());
+                        platformJSON.put(Key.URL, tempURL);
+                        //platformJSON.put(Key.URL, currentPlatform.getURL());
                         platformJSON.put(Key.PROJECT_NAME, currentPlatform.getProjectName());
                     }
                     platformJSON.put(Key.IS_CREATING, true);
@@ -124,7 +133,8 @@ public class GetMyPlatforms extends HttpServlet {
             out.close();
         }
     }
-
+    
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP

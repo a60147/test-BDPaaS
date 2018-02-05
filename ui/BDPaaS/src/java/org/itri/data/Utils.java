@@ -15,6 +15,7 @@ import java.util.Date;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.http.HttpServletRequest;
 
 
 /**
@@ -207,5 +208,28 @@ public class Utils {
             Logger.getLogger(className).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public static String getConvertedIP(HttpServletRequest request, String originalURL){
+        String tempURL = originalURL;
+        String xmlBDPaaSIP = request.getServletContext().getInitParameter(Key.BDPAASIP);
+        String bdPaaSIP = System.getProperty(Key.BDPAASIP, xmlBDPaaSIP);
+        if(originalURL != null){
+            if(!originalURL.matches("")){
+                String[] urlArray1 = originalURL.split("//");
+                int portStartIndex = urlArray1[1].indexOf(":");
+                if(portStartIndex >= 0){
+                    String ipString = urlArray1[1].substring(0, portStartIndex);
+                    if(bdPaaSIP!=null){
+                        if(!bdPaaSIP.matches("")){
+                            tempURL = tempURL.replace(ipString, bdPaaSIP);                            
+                        }
+                    }
+                    
+                }
+            }
+        }
+        return tempURL;
+    }
+
             
 }

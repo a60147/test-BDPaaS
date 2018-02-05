@@ -34,6 +34,7 @@ import org.itri.data.entity.Status;
 import org.itri.dataAccess.ContainerManager;
 import org.itri.dataAccess.PlatformDBManager;
 import org.itri.dataAccess.UserDBManager;
+import org.itri.utils.DebugLog;
 
 
 /**
@@ -92,7 +93,7 @@ public class DeleteUser extends HttpServlet {
                     
                 }
                 platformDBManager.deleteAllPlatforms(targetUserID);
-                System.out.println(result);
+                DebugLog.info(result);
                 jsonResult.put(Key.ERROR_CODE, Status.SUCCESS);
             }
             

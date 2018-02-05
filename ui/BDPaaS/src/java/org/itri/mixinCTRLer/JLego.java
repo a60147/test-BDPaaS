@@ -50,37 +50,6 @@ public class JLego {
                     "jLego.background = new jLego.objectUI.background();"+
                     "</script>");
                     break;
-                case "highCharts":
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/highcharts/highcharts.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/highcharts/modules/boost.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/highcharts/highcharts-more.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/highcharts/modules/solid-gauge.js\"></script>");
-                    break;
-                case "jQWidgets":
-                    out.append("<link rel=\"stylesheet\" href=\"jLego/js/addOns/jqwidgets/styles/jqx.base.css\" type=\"text/css\"/>");
-                    out.append("<link rel=\"stylesheet\" href=\"jLego/js/addOns/jqwidgets/styles/jqx.light.css\" type=\"text/css\"/>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/jqwidgets/jqxcore.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/jqwidgets/jqxdata.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/jqwidgets/jqxbuttons.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/jqwidgets/jqxscrollbar.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/jqwidgets/jqxdatatable.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/jqwidgets/jqxcheckbox.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/jqwidgets/jqxlistbox.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/jqwidgets/jqxtreegrid.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/jqwidgets/jqxmenu.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/jqwidgets/jqxdropdownlist.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/jqwidgets/jqxdatetimeinput.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/jqwidgets/jqxdate.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/jqwidgets/jqxcalendar.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/jqwidgets/jqxtooltip.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/jqwidgets/globalization/globalize.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/jqwidgets/jqxscheduler.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/jqwidgets/jqxscheduler.api.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/jqwidgets/jqxwindow.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/jqwidgets/jqxnumberinput.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/jqwidgets/jqxradiobutton.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/jqwidgets/jqxinput.js\"></script>");
-                    break;
                 case "hintCardCTRLer":
                     out.append("<link rel=\"stylesheet\" href=\"jLego/css/objectUI/hintCardCTRLer.css\" type=\"text/css\"/>");
                     out.append("<script type=\"text/javascript\" src=\"jLego/js/objectUI/hintCardCTRLer/data.js\"></script>");
@@ -198,36 +167,6 @@ public class JLego {
                     out.append("<script>"+
                     "jLego.nodeTable = new jLego.objectUI.nodeTable();"+
                     "</script>");
-                    break;
-                case "gsapTimelineLite":
-                    if(!isGSAPTweenImported){
-                        out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/gsap/plugins/CSSPlugin.min.js\"></script>");
-                        out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/gsap/plugins/CSSRulePlugin.min.js\"></script>");
-                        out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/gsap/TweenLite.min.js\"></script>");
-                        isGSAPTweenImported = !isGSAPTweenImported;
-                    }
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/gsap/TimelineLite.min.js\"></script>");
-                    break;
-                case "gsapTweenMax":
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/gsap/gsapTweenMax.min.js\"></script>");
-                    break;
-                case "gsapTweenLite":
-                    if(!isGSAPTweenImported){
-                        out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/gsap/plugins/CSSPlugin.min.js\"></script>");
-                        out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/gsap/plugins/CSSRulePlugin.min.js\"></script>");
-                        out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/gsap/TweenLite.min.js\"></script>");
-                        isGSAPTweenImported = !isGSAPTweenImported;
-                    }
-                    break;
-                case "gsapDraggable":
-                    if(!isGSAPTweenImported){
-                        out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/gsap/plugins/CSSPlugin.min.js\"></script>");
-                        out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/gsap/plugins/CSSRulePlugin.min.js\"></script>");
-                        out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/gsap/TweenLite.min.js\"></script>");
-                        isGSAPTweenImported = !isGSAPTweenImported;
-                    }
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/gsap/plugins/ThrowPropsPlugin.min.js\"></script>");
-                    out.append("<script type=\"text/javascript\" src=\"jLego/js/addOns/gsap/utils/Draggable.min.js\"></script>");
                     break;
                 case "notificationCenter":
                     out.append("<link rel=\"stylesheet\" href=\"jLego/css/objectUI/notificationCenter.css\" type=\"text/css\"/>");

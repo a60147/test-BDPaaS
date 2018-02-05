@@ -73,4 +73,6 @@ public class Key {
     public static String IS_MANUAL_ADDED = "isManualAdded";
     
     public static String IS_CREATING = "isCreating";
+    
+    public static String BDPAASIP = "bdpaasIP";
 }
