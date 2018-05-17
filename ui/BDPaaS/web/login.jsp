@@ -1,7 +1,8 @@
 <%-- 
     Document   : index
     Created on : 2016/8/1, 上午 10:59:19
-    Author     : A40385
+    Author     : MuKai Huang
+    Copyright (c) 2018 ITRI
 --%>
 <%@page import="org.itri.mixinCTRLer.WebPage"%>
 <%@page import="org.itri.mixinCTRLer.JLego"%>

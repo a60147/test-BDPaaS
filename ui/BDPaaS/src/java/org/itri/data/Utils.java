@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Author     : MuKai Huang
+    Copyright (c) 2018 ITRI
  */
 package org.itri.data;
 
@@ -231,5 +230,37 @@ public class Utils {
         return tempURL;
     }
 
-            
+    public static String getConvertedURL(HttpServletRequest request, String type, String originalURL){
+        String tempURL = originalURL;
+        String xmlBDPaaSIP = request.getServletContext().getInitParameter(Key.BDPAASIP);
+        String bdPaaSIP = System.getProperty(Key.BDPAASIP, xmlBDPaaSIP);
+        if(originalURL != null){
+            if(!originalURL.matches("")){
+                String[] urlArray1 = originalURL.split("//");
+                int portStartIndex = urlArray1[1].indexOf(":");
+                if(portStartIndex >= 0){
+                    String ipString = urlArray1[1].substring(0, portStartIndex);
+                    String portString = urlArray1[1].substring(portStartIndex+1, urlArray1[1].length());
+                    if(bdPaaSIP!=null){
+                        if(!bdPaaSIP.matches("")){
+                            if(type.matches(Key.SPARK)){
+                                tempURL =  "https://" + bdPaaSIP + ":8080/" + type + "/" + portString + "/proxy:spark-master:8080"; 
+                            }
+                            else if(type.matches(Key.APEX)){
+                                tempURL =  "https://" + bdPaaSIP + ":8080/" + type + "/" + portString + "/static/#/welcome"; 
+                            }
+                            else if(type.matches(Key.YARN)){
+                                tempURL =  "https://" + bdPaaSIP + ":8080/" + type + "/" + portString + "/cluster"; 
+                            }
+                            else{
+                                tempURL =  "https://" + bdPaaSIP + ":8080/" + type + "/" + portString + "/"; 
+                            }                      
+                        }
+                    }
+                    
+                }
+            }
+        }
+        return tempURL;
+    }        
 }

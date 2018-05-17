@@ -1,7 +1,8 @@
 <%-- 
     Document   : index
     Created on : 2017/9/4, 上午 09:19:22
-    Author     : A40385
+    Author     : MuKai Huang
+    Copyright (c) 2018 ITRI
 --%>
 
 <%@page import="org.itri.data.entity.Login"%>

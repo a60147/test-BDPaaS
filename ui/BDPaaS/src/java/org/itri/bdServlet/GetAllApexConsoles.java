@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Author     : MuKai Huang
+    Copyright (c) 2018 ITRI
  */
 package org.itri.bdServlet;
 
@@ -73,7 +72,8 @@ public class GetAllApexConsoles extends HttpServlet {
                     platformJSON.put(Key.PROJECT_NAME, currentPlatform.getProjectName());
                     platformJSON.put(Key.USER, currentPlatform.getUserID());
                     //jsonResult.put(Key.HADOOP, currentPlatform.getURL()); 
-                    String tempURL = Utils.getConvertedIP(request, currentPlatform.getURL());
+                    //String tempURL = Utils.getConvertedIP(request, currentPlatform.getURL());
+                    String tempURL = Utils.getConvertedURL(request, Key.HADOOP, currentPlatform.getURL());
                     platformJSON.put(Key.URL, tempURL);
                     platformJSON.put(Key.HADOOP, tempURL);
                     platformJSONList.put(platformJSON);
@@ -87,7 +87,8 @@ public class GetAllApexConsoles extends HttpServlet {
                     platformJSON.put(Key.PROJECT_NAME, currentPlatform.getProjectName());
                     platformJSON.put(Key.USER, currentPlatform.getUserID());
                     //jsonResult.put(Key.YARN, currentPlatform.getURL()); 
-                    String tempURL = Utils.getConvertedIP(request, currentPlatform.getURL());
+                    //String tempURL = Utils.getConvertedIP(request, currentPlatform.getURL());
+                    String tempURL = Utils.getConvertedURL(request, Key.YARN, currentPlatform.getURL());
                     platformJSON.put(Key.URL, tempURL);
                     platformJSON.put(Key.YARN, tempURL);
                     platformJSONList.put(platformJSON);

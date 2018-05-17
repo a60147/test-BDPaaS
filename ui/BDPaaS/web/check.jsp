@@ -1,7 +1,8 @@
 <%-- 
     Document   : index
     Created on : 2016/8/1, 上午 10:59:19
-    Author     : A40385
+    Author     : MuKai Huang
+    Copyright (c) 2018 ITRI
 --%>
 <%@page import="org.itri.data.entity.Login"%>
 <%@page import="org.itri.dataAccess.AuthDBManager"%>
@@ -40,8 +41,6 @@
             Login loginData = myAuthDBManager.doLogin(account, password);
             if(loginData.getResult()){
                 resultResult = true;
-                System.out.println("set account: " + account);
-                System.out.println("set password " + password);
                 session.setAttribute("userID", account);
                 session.setAttribute("password", password);
                 session.setAttribute("authority", loginData.getAuthority());

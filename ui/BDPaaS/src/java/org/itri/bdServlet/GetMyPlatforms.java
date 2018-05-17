@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Author     : MuKai Huang
+    Copyright (c) 2018 ITRI
  */
 package org.itri.bdServlet;
 
@@ -77,7 +76,13 @@ public class GetMyPlatforms extends HttpServlet {
                     }
                     else{
                         platformJSON.put(Key.TYPE, currentPlatform.getType());
-                        String tempURL = Utils.getConvertedIP(request, currentPlatform.getURL());
+                        String tempURL = currentPlatform.getURL();
+                        if(currentPlatform.getType().matches(Key.ZEPPELIN) || currentPlatform.getType().matches(Key.APEX)){
+                            tempURL = Utils.getConvertedURL(request, currentPlatform.getType(), currentPlatform.getURL());
+                        }
+                        else{
+                            tempURL = Utils.getConvertedIP(request, currentPlatform.getURL());
+                        }
                         platformJSON.put(Key.URL, tempURL);
                         //platformJSON.put(Key.URL, currentPlatform.getURL());
                         platformJSON.put(Key.PROJECT_NAME, currentPlatform.getProjectName());

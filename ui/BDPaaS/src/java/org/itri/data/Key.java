@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Author     : MuKai Huang
+    Copyright (c) 2018 ITRI
  */
 package org.itri.data;
 
@@ -42,6 +41,8 @@ public class Key {
     public static String YARN = "yarn";
     public static String K8S_DASHBOARD= "k8sDashboard";
     public static String GRAFANA= "grafana";
+    
+    public static String CONSOLE = "console";
     
     public static String TYPE = "type";
     public static String PROJECT_NAME = "projectName";
